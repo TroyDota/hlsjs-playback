@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@clappr/core'), require('hls.js')) :
   typeof define === 'function' && define.amd ? define(['@clappr/core', 'hls.js'], factory) :
-  (global = global || self, global.HlsjsPlayback = factory(global.Clappr, global.Hls));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.HlsjsPlayback = factory(global.Clappr, global.Hls));
 }(this, (function (core, HLSJS) { 'use strict';
 
   HLSJS = HLSJS && Object.prototype.hasOwnProperty.call(HLSJS, 'default') ? HLSJS['default'] : HLSJS;
@@ -557,7 +557,7 @@
     }, {
       key: "_updateSettings",
       value: function _updateSettings() {
-        if (this._playbackType === core.Playback.VOD) this.settings.left = ['playpause', 'position', 'duration'];else if (this.dvrEnabled) this.settings.left = ['playpause'];else this.settings.left = ['playstop'];
+        if (this._playbackType === core.Playback.VOD) this.settings.left = ['playpause', 'position', 'duration'];else if (this.dvrEnabled) this.settings.left = ['playpause'];else this.settings.left = ['playpause'];
         this.settings.seekEnabled = this.isSeekEnabled();
         this.trigger(core.Events.PLAYBACK_SETTINGSUPDATE);
       }

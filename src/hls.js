@@ -271,7 +271,7 @@ export default class HlsjsPlayback extends HTML5Video {
     else if (this.dvrEnabled)
       this.settings.left = ['playpause']
     else
-      this.settings.left = ['playstop']
+      this.settings.left = ['playpause']
 
     this.settings.seekEnabled = this.isSeekEnabled()
     this.trigger(Events.PLAYBACK_SETTINGSUPDATE)

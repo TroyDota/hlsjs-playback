@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@clappr/core')) :
   typeof define === 'function' && define.amd ? define(['@clappr/core'], factory) :
-  (global = global || self, global.HlsjsPlayback = factory(global.Clappr));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.HlsjsPlayback = factory(global.Clappr));
 }(this, (function (core) { 'use strict';
 
   function _classCallCheck(instance, Constructor) {
@@ -21601,7 +21601,7 @@
     }, {
       key: "_updateSettings",
       value: function _updateSettings() {
-        if (this._playbackType === core.Playback.VOD) this.settings.left = ['playpause', 'position', 'duration'];else if (this.dvrEnabled) this.settings.left = ['playpause'];else this.settings.left = ['playstop'];
+        if (this._playbackType === core.Playback.VOD) this.settings.left = ['playpause', 'position', 'duration'];else if (this.dvrEnabled) this.settings.left = ['playpause'];else this.settings.left = ['playpause'];
         this.settings.seekEnabled = this.isSeekEnabled();
         this.trigger(core.Events.PLAYBACK_SETTINGSUPDATE);
       }

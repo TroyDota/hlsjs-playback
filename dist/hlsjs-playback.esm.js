@@ -21597,7 +21597,7 @@ var HlsjsPlayback = /*#__PURE__*/function (_HTML5Video) {
   }, {
     key: "_updateSettings",
     value: function _updateSettings() {
-      if (this._playbackType === Playback.VOD) this.settings.left = ['playpause', 'position', 'duration'];else if (this.dvrEnabled) this.settings.left = ['playpause'];else this.settings.left = ['playstop'];
+      if (this._playbackType === Playback.VOD) this.settings.left = ['playpause', 'position', 'duration'];else if (this.dvrEnabled) this.settings.left = ['playpause'];else this.settings.left = ['playpause'];
       this.settings.seekEnabled = this.isSeekEnabled();
       this.trigger(Events.PLAYBACK_SETTINGSUPDATE);
     }
